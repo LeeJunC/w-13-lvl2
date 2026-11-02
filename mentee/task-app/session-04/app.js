@@ -4,7 +4,7 @@
 const tasks = [
   { title: "Buy milk", isDone: false, priority: 1 },
   { title: "Call bank", isDone: true, priority: 2 },
-  { title: "Pay rent", isDone: false, priority: 3 }
+  { title: "Pay rent", isDone: false, priority: 3 },
 ];
 
 function getStatus(task) {
