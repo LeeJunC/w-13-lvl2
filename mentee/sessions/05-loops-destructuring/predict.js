@@ -94,13 +94,13 @@ const fruits = ["Kiwi", "Mango", "Dragon Fruit"];
 //   console.log(fruits[index]);
 // }
 
-const pay = 100;
+// const pay = 100;
 
-for (let week = 2; week <= 12; week += 2) {
-  const payment = pay * 2;
+// for (let week = 2; week <= 12; week += 2) {
+//   const payment = pay * 2;
 
-  console.log(`Week ${week}: Pay employee $${payment}`);
-}
+//   console.log(`Week ${week}: Pay employee $${payment}`);
+// }
 
 // When should we use a for loop?
 // When you need the index
