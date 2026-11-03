@@ -22,6 +22,6 @@ function formatTask(task) {
 }
 
 // Written by hand — Session 5 fixes this.
-console.log(formatTask(tasks[0]));
+console.log(formatTask(tasks[0])); //
 console.log(formatTask(tasks[1]));
 console.log(formatTask(tasks[2]));
