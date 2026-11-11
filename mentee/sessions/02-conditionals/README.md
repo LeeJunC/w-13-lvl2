@@ -249,7 +249,10 @@ if (isDone) {
 ```
 
 1. What is `label` at the end?
+// label should be 'Normal'
 2. **Which branch can never run, no matter what values you use?** Why?
+// else if(priority === 1) 
+// can never run since its comparing a string to an int and thus will never be true
 
 Bring both answers to class.
 
@@ -279,5 +282,7 @@ if (stock) {
 In the form, write:
 
 > I think it logs ___ and ___, because ___
+// I think it logs A: has quantity and then B: sold out because the string version of 0 counts as true 
+// while 0 as an int is a falsy
 
 Session 1 has a clue that matters here.
