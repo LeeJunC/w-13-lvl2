@@ -55,3 +55,43 @@ console.log(getLineupStatus(players[1])); // On the bench
 const favPlayer = players[0];
 favPlayer.homeRuns = favPlayer.homeRuns + 1;
 console.log(players[0]);
+
+
+
+const playlist = [
+  {
+    title: "SWEET SOUR",
+    artist: "KiiiKiii",
+    goated: true,
+    genres: ["Pop", "K-Pop"]
+  },
+  {
+    title: "Illusion",
+    artist: "Dua Lipa",
+    goated: true,
+    genres: ["Pop"]
+  },
+  {
+    title: "Go",
+    artist: "Adela",
+    goated: true,
+    genres: ["Pop", "Electronic", "Hyperpop"]
+  }
+];
+
+const getTitle = (song) => song.title;
+
+function getGenres(song){
+  return song.genres;
+}
+
+
+console.log(getTitle(playlist[0]));
+
+console.log(getGenres(playlist[2]));
+
+const favSong = playlist[1];
+favSong.goated = false;
+console.log(playlist[1].goated);
+
+addGenre(playlist[1], "Country");

@@ -8,13 +8,16 @@
 //
 // Design check — answer these in a comment before writing any code.
 //   1. What shape is an expense? Write one example.
+// An expense 
 //   2. What do you want to find out about your expenses?
 //
 // Example of the shape, from the brief:
 //   { label: "Internet", amount: 45, category: "home", isPaid: false }
 
 // ---------- data ----------
-
+const expenses = [
+    { label: "Doordash", amount: ""}
+]
 // ---------- functions ----------
 
 // ---------- output ----------

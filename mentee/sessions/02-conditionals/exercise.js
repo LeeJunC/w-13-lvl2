@@ -15,7 +15,7 @@ console.log(`Grade: ${grade}`); // J
 
 
 // Modify Shipping Calc
-let orderTotal = 333;
+let orderTotal = 600;
 let country = "international";
 let isMember = false;
 
@@ -36,3 +36,4 @@ let label = shippingCost === 0 ? "Free shipping" : `Shipping: $${shippingCost}`;
 console.log(label);
 
 // i just added it on the same line as isMember and it should work the same in my mind
+// an international 600 cost order goes through the first if statement and has no shipping cost

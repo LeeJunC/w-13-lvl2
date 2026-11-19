@@ -2,7 +2,7 @@
 const itemPrice = 15;
 const itemCount = 2;
 const cartTotal = itemCount * itemPrice;
-console.log(`Cart: ${itemCount} items, total ${itemCount * itemPrice}`);
+console.log(`Cart: ${itemCount} items, total ${cartTotal}`);
 
 
 // Modify

@@ -3,7 +3,7 @@
 **Read before class. ~13 minutes.**
 **Two things to do at the bottom.**
 
-> Full lists of array operations and object syntax are in `REFERENCE.md`. This file is about *why* data has shape, and *how to read it*.
+> Full lists of array operations and object syntax are in `REFERENCE.md`. This file is about _why_ data has shape, and _how to read it_.
 
 ---
 
@@ -43,19 +43,19 @@ const tasks = ["Buy milk", "Call bank", "Pay rent"];
 Each item has a position called an **index**. **Counting starts at 0.**
 
 ```js
-tasks[0]   // "Buy milk"
-tasks[1]   // "Call bank"
-tasks[2]   // "Pay rent"
-tasks[3]   // undefined — there's nothing there
+tasks[0]; // "Buy milk"
+tasks[1]; // "Call bank"
+tasks[2]; // "Pay rent"
+tasks[3]; // undefined — there's nothing there
 ```
 
-Why 0? The index means *"how many steps from the start."* The first item is zero steps away. Annoying for a week, then automatic.
+Why 0? The index means _"how many steps from the start."_ The first item is zero steps away. Annoying for a week, then automatic.
 
 `.length` tells you how many items there are:
 
 ```js
-tasks.length                   // 3
-tasks[tasks.length - 1]        // "Pay rent" — always the last item
+tasks.length; // 3
+tasks[tasks.length - 1]; // "Pay rent" — always the last item
 ```
 
 Notice the gap: length is `3`, but the last index is `2`. That off-by-one is behind a lot of bugs.
@@ -63,8 +63,8 @@ Notice the gap: length is `3`, but the last index is `2`. That off-by-one is beh
 ### Adding and removing
 
 ```js
-tasks.push("Walk dog");   // adds to the end
-tasks.pop();              // removes the last item
+tasks.push("Walk dog"); // adds to the end
+tasks.pop(); // removes the last item
 ```
 
 More operations in `REFERENCE.md`. These two are enough for now.
@@ -72,10 +72,10 @@ More operations in `REFERENCE.md`. These two are enough for now.
 ### Asking for an index that doesn't exist
 
 ```js
-tasks[10]   // undefined
+tasks[10]; // undefined
 ```
 
-No error. You just get `undefined` — Session 1's *"your own code asked for something that isn't there."* Hold onto that; it matters a lot in the Errors section below.
+No error. You just get `undefined` — Session 1's _"your own code asked for something that isn't there."_ Hold onto that; it matters a lot in the Errors section below.
 
 ---
 
@@ -85,7 +85,7 @@ No error. You just get `undefined` — Session 1's *"your own code asked for som
 const task = {
   title: "Buy milk",
   isDone: false,
-  priority: 1
+  priority: 1,
 };
 ```
 
@@ -94,42 +94,42 @@ Each line is a **property**: a name (the **key**) and a **value**. The three loo
 Read a property with a dot:
 
 ```js
-task.title      // "Buy milk"
-task.priority   // 1
-task.dueDate    // undefined — no such property
+task.title; // "Buy milk"
+task.priority; // 1
+task.dueDate; // undefined — no such property
 ```
 
 Change or add one the same way:
 
 ```js
-task.isDone = true;        // change
-task.dueDate = "Friday";   // add — didn't exist before, now it does
+task.isDone = true; // change
+task.dueDate = "Friday"; // add — didn't exist before, now it does
 ```
 
 ### Bracket notation — when the key is in a variable
 
 ```js
-task["title"]              // same as task.title
+task["title"]; // same as task.title
 
 const field = "priority";
-task[field]                // 1
-task.field                 // undefined — looks for a property literally called "field"
+task[field]; // 1
+task.field; // undefined — looks for a property literally called "field"
 ```
 
-You won't need this often yet. It becomes important when your code decides *which* property to read — sorting by a column the user picked, for instance.
+You won't need this often yet. It becomes important when your code decides _which_ property to read — sorting by a column the user picked, for instance.
 
 ---
 
 ## 3. Array or object — how to choose
 
-| Use an array when... | Use an object when... |
-|---|---|
-| It's a **list** of similar things | It's **one thing** with different details |
-| Order matters | Each value needs a name |
+| Use an array when...                             | Use an object when...                     |
+| ------------------------------------------------ | ----------------------------------------- |
+| It's a **list** of similar things                | It's **one thing** with different details |
+| Order matters                                    | Each value needs a name                   |
 | You'd describe it as "the tasks", "the messages" | You'd describe it as "a task", "the user" |
-| You'll ask "what's at position 3?" | You'll ask "what's its title?" |
+| You'll ask "what's at position 3?"               | You'll ask "what's its title?"            |
 
-When you're not sure, say it in English. *"A list of tasks"* → array. *"A task has a title and a priority"* → object. *"A list of tasks, each with a title and priority"* → array of objects.
+When you're not sure, say it in English. _"A list of tasks"_ → array. _"A task has a title and a priority"_ → object. _"A list of tasks, each with a title and priority"_ → array of objects.
 
 ---
 
@@ -139,7 +139,7 @@ When you're not sure, say it in English. *"A list of tasks"* → array. *"A task
 const tasks = [
   { title: "Buy milk", isDone: false, priority: 1 },
   { title: "Call bank", isDone: true, priority: 2 },
-  { title: "Pay rent", isDone: false, priority: 1 }
+  { title: "Pay rent", isDone: false, priority: 1 },
 ];
 ```
 
@@ -150,7 +150,7 @@ This is what you'll get from APIs in week 5. This is what you'll store in `local
 To reach a value inside nested data, move one step at a time and say what you're holding after each step:
 
 ```js
-tasks[1].title
+tasks[1].title;
 ```
 
 - `tasks` → the whole array
@@ -162,12 +162,10 @@ tasks[1].title
 ```js
 const user = {
   name: "Ana",
-  tasks: [
-    { title: "Buy milk", tags: ["shopping", "urgent"] }
-  ]
+  tasks: [{ title: "Buy milk", tags: ["shopping", "urgent"] }],
 };
 
-user.tasks[0].tags[1]   // "urgent"
+user.tasks[0].tags[1]; // "urgent"
 ```
 
 `user` → object → `.tasks` → array → `[0]` → object → `.tags` → array → `[1]` → `"urgent"`.
@@ -181,11 +179,11 @@ const weather = {
   city: "Lisbon",
   days: [
     { date: "Mon", temp: 22, condition: "Sunny" },
-    { date: "Tue", temp: 19, condition: "Cloudy" }
-  ]
+    { date: "Tue", temp: 19, condition: "Cloudy" },
+  ],
 };
 
-weather.days[1].condition   // "Cloudy"
+weather.days[1].condition; // "Cloudy"
 ```
 
 ---
@@ -197,8 +195,8 @@ This surprises everyone:
 ```js
 const task = { title: "Buy milk", isDone: false };
 
-task.isDone = true;         // works
-task = { title: "New" };    // TypeError
+task.isDone = true; // works
+task = { title: "New" }; // TypeError
 ```
 
 `const` means **the variable can't be pointed at a different thing**. It says nothing about whether the thing itself can change. You can push to a `const` array and edit a `const` object all day.
@@ -228,15 +226,15 @@ const taskB = taskA;
 
 taskB.isDone = true;
 
-console.log(taskA.isDone);   // true
+console.log(taskA.isDone); // true
 ```
 
 `taskB = taskA` did not copy the object. There is **only one object**. Both variables point at it.
 
 The way to picture it:
 
-- A **number, string or boolean** variable holds *the value itself*. Assigning it makes a copy.
-- An **array or object** variable holds *directions to where the thing lives*. Assigning it copies the directions — so now two variables lead to the same place.
+- A **number, string or boolean** variable holds _the value itself_. Assigning it makes a copy.
+- An **array or object** variable holds _directions to where the thing lives_. Assigning it copies the directions — so now two variables lead to the same place.
 
 This is called a **reference**. It's not a quirk; it's deliberate. Objects can be large, and copying them every time you assign one would be slow. Directions are cheap.
 
@@ -248,7 +246,7 @@ Same reason this is `false`:
 { title: "Buy milk" } === { title: "Buy milk" }   // false — two separate objects
 ```
 
-`===` on objects asks *"same object?"*, not *"same contents?"*.
+`===` on objects asks _"same object?"_, not _"same contents?"_.
 
 One more `typeof` landmine: `typeof []` is `"object"`. Arrays are a kind of object. Use `Array.isArray(value)` when you need to tell them apart.
 
@@ -262,7 +260,7 @@ Loose variables become a proper data structure, and `getStatus` now takes a whol
 const tasks = [
   { title: "Buy milk", isDone: false, priority: 1 },
   { title: "Call bank", isDone: true, priority: 2 },
-  { title: "Pay rent", isDone: false, priority: 3 }
+  { title: "Pay rent", isDone: false, priority: 3 },
 ];
 
 function getStatus(task) {
@@ -279,9 +277,9 @@ function formatTask(task) {
   return `${task.title}: ${getStatus(task)}`;
 }
 
-console.log(formatTask(tasks[0]));   // "Buy milk: Urgent"
-console.log(formatTask(tasks[1]));   // "Call bank: Done"
-console.log(formatTask(tasks[2]));   // "Pay rent: To do"
+console.log(formatTask(tasks[0])); // "Buy milk: Urgent"
+console.log(formatTask(tasks[1])); // "Call bank: Done"
+console.log(formatTask(tasks[2])); // "Pay rent: To do"
 ```
 
 Two things to notice:
@@ -293,25 +291,25 @@ Two things to notice:
 
 Session 3 gave you two questions for designing a function. Add one before them:
 
-1. **What shape is the data?** → describe it in English first: *"a list of tasks, each with a title, done flag, and priority"*
+1. **What shape is the data?** → describe it in English first: _"a list of tasks, each with a title, done flag, and priority"_
 2. What does the function need?
 3. What does it give back?
 
-Most "I don't know where to start" moments are actually *"I don't know what shape my data is."* Answer that first and the functions usually become obvious.
+Most "I don't know where to start" moments are actually _"I don't know what shape my data is."_ Answer that first and the functions usually become obvious.
 
 ---
 
 ## Errors you will hit this week
 
-| What you see | What happened |
-|---|---|
-| **`TypeError: Cannot read properties of undefined (reading 'title')`** | Whatever is *before* `.title` is `undefined`. Wrong index, typo in the property name, or the data isn't what you think it is |
-| `undefined` instead of a value | Index past the end, or a property name that doesn't exist — often a typo (`task.tittle`) |
-| Last item missing or `undefined` | Used `tasks[tasks.length]` instead of `tasks[tasks.length - 1]` |
-| A value changed and you didn't touch it | Two variables point at the same object |
-| `TypeError: Assignment to constant variable` | Tried to reassign a `const` — but editing its contents is fine |
+| What you see                                                           | What happened                                                                                                                |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| **`TypeError: Cannot read properties of undefined (reading 'title')`** | Whatever is _before_ `.title` is `undefined`. Wrong index, typo in the property name, or the data isn't what you think it is |
+| `undefined` instead of a value                                         | Index past the end, or a property name that doesn't exist — often a typo (`task.tittle`)                                     |
+| Last item missing or `undefined`                                       | Used `tasks[tasks.length]` instead of `tasks[tasks.length - 1]`                                                              |
+| A value changed and you didn't touch it                                | Two variables point at the same object                                                                                       |
+| `TypeError: Assignment to constant variable`                           | Tried to reassign a `const` — but editing its contents is fine                                                               |
 
-**The first row is the most common error in JavaScript.** You'll see it constantly in weeks 4–6, especially with API data. The error names the property it tried to read — the bug is always one step *before* that. Log the step before and see what you actually have.
+**The first row is the most common error in JavaScript.** You'll see it constantly in weeks 4–6, especially with API data. The error names the property it tried to read — the bug is always one step _before_ that. Log the step before and see what you actually have.
 
 ---
 
@@ -321,7 +319,7 @@ Your own app starts here: an **Expense Tracker**. It runs alongside the Task Tra
 
 **M1 — first two stages due Session 6**, the last by Session 7. Console only. Your expenses as an array of objects, and functions that work out useful things about them. You'll get the brief at the end of class.
 
-Today's design check is the place to start: *what shape is an expense?*
+Today's design check is the place to start: _what shape is an expense?_
 
 ---
 
@@ -336,22 +334,28 @@ const user = {
   name: "Ana",
   tasks: [
     { title: "Buy milk", isDone: false },
-    { title: "Call bank", isDone: true }
-  ]
+    { title: "Call bank", isDone: true },
+  ],
 };
 ```
 
 Write the expression that gives you:
 
 1. The user's name
+   user.name;
 2. How many tasks she has
+   user.tasks.length;
 3. The title of her second task
+   user.tasks[1].title;
 4. Whether her first task is done
+   user.tasks[0].isDone;
 
 Then answer:
 
 5. What does `user.tasks[2]` give you?
+   undefined
 6. What happens with `user.tasks[2].title`? Why is that different from question 5?
+   crashes, because reading a property of something that doesnt exist doesnt give undefined but instead an error
 
 ### 2. Submit your prediction
 
@@ -376,6 +380,7 @@ console.log(doneCount);
 
 In the form, write:
 
-> I think it logs ___ and ___, because ___
+> I think it logs **_ and _**, because \_\_\_
+I think it logs true and 1
 
 Your Session 3 trace is part of the answer. So is section 6.
