@@ -35,6 +35,7 @@ const players = [
   },
 ];
 
+
 function itemDescription(players) {
   const description = [];
 
@@ -68,9 +69,9 @@ function homeRunTotal(players) {
   return total;
 }
 
-function findPlayer(players) {
+function findPlayer(players, name) {
   for (const player of players) {
-    if (player.name === "Juan Soto") {
+    if (player.name === name) {
       return player;
     }
   }
@@ -78,7 +79,7 @@ function findPlayer(players) {
   return null;
 }
 
-console.log(findPlayer(players));
+console.log(findPlayer(players, "Juan"));
 
 function listOfPlayers(player) {
   for (let i = 0; i < player.length; i++) {

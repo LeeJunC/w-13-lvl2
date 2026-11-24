@@ -3,7 +3,7 @@
 **Read before class. ~12 minutes.**
 **Two things to do at the bottom.**
 
-> `for...in`, `continue`, destructuring defaults and renaming are in `REFERENCE.md`. This file is about *why* loops exist and *the handful of patterns you'll actually write*.
+> `for...in`, `continue`, destructuring defaults and renaming are in `REFERENCE.md`. This file is about _why_ loops exist and _the handful of patterns you'll actually write_.
 
 ---
 
@@ -42,7 +42,7 @@ for (const task of tasks) {
 }
 ```
 
-Read it as English: *"for each task of tasks, log it."*
+Read it as English: _"for each task of tasks, log it."_
 
 The block runs **once per item**. Each time round — each **iteration** — `task` holds the next item. First run: `"Buy milk"`. Second: `"Call bank"`. Third: `"Pay rent"`. Then the array runs out and the loop ends.
 
@@ -63,12 +63,12 @@ for (const price of prices) {
 }
 ```
 
-| Iteration | `price` | `total` after |
-|---|---|---|
-| before loop | — | 0 |
-| 1 | 5 | 5 |
-| 2 | 10 | 15 |
-| 3 | 20 | 35 |
+| Iteration   | `price` | `total` after |
+| ----------- | ------- | ------------- |
+| before loop | —       | 0             |
+| 1           | 5       | 5             |
+| 2           | 10      | 15            |
+| 3           | 20      | 35            |
 
 Final `total`: `35`.
 
@@ -115,7 +115,7 @@ function findUrgent(tasks) {
 }
 ```
 
-`return` inside the loop stops the whole function immediately — Session 3. You don't need to check the rest once you've found it. If the loop finishes without finding anything, the function falls through to `return null` — *"nothing here, on purpose"* from Session 1.
+`return` inside the loop stops the whole function immediately — Session 3. You don't need to check the rest once you've found it. If the loop finishes without finding anything, the function falls through to `return null` — _"nothing here, on purpose"_ from Session 1.
 
 ### Filter — build a new list of only some items
 
@@ -165,11 +165,11 @@ for (let i = 0; i < tasks.length; i++) {
 
 Three parts inside the brackets, separated by `;`:
 
-| Part | Code | Means |
-|---|---|---|
-| Start | `let i = 0` | Start counting at 0 |
-| Keep going while | `i < tasks.length` | Stop when `i` reaches the length |
-| After each run | `i++` | Add 1 to `i` (same as `i = i + 1`) |
+| Part             | Code               | Means                              |
+| ---------------- | ------------------ | ---------------------------------- |
+| Start            | `let i = 0`        | Start counting at 0                |
+| Keep going while | `i < tasks.length` | Stop when `i` reaches the length   |
+| After each run   | `i++`              | Add 1 to `i` (same as `i = i + 1`) |
 
 `i` isn't an item — it's a position. Use it to reach the item: `tasks[i]`.
 
@@ -189,7 +189,7 @@ let connected = false;
 
 while (!connected && attempts < 3) {
   attempts = attempts + 1;
-  connected = tryToConnect();   // imagine a function that returns true or false
+  connected = tryToConnect(); // imagine a function that returns true or false
 }
 ```
 
@@ -223,7 +223,7 @@ for (const task of tasks) {
 }
 ```
 
-`const { title, isDone, priority } = task;` means: *"make a variable called `title` holding `task.title`, one called `isDone` holding `task.isDone`…"* and so on.
+`const { title, isDone, priority } = task;` means: _"make a variable called `title` holding `task.title`, one called `isDone` holding `task.isDone`…"_ and so on.
 
 Two rules:
 
@@ -242,7 +242,7 @@ The hand-written lines are gone. Three tasks or three thousand, same code:
 const tasks = [
   { title: "Buy milk", isDone: false, priority: 1 },
   { title: "Call bank", isDone: true, priority: 2 },
-  { title: "Pay rent", isDone: false, priority: 3 }
+  { title: "Pay rent", isDone: false, priority: 3 },
 ];
 
 function getStatus(task) {
@@ -280,14 +280,14 @@ console.log(`${countOpen(tasks)} tasks still open`);
 
 ## Errors you will hit this week
 
-| What you see | What happened |
-|---|---|
-| Count or total is always tiny / resets | Accumulator declared **inside** the loop — it resets every iteration |
-| `Cannot read properties of undefined` on the last iteration | Classic `for` with `i <= length` instead of `i < length` |
-| Loop only runs once | `return` inside the loop fired on the first item |
-| Browser tab freezes | Infinite `while` loop — nothing inside it moves the condition toward false |
-| Destructured variable is `undefined` | The name doesn't match a property on the object — check spelling |
-| `ReferenceError` on the accumulator after the loop | Declared inside the loop body, used outside it |
+| What you see                                                | What happened                                                              |
+| ----------------------------------------------------------- | -------------------------------------------------------------------------- |
+| Count or total is always tiny / resets                      | Accumulator declared **inside** the loop — it resets every iteration       |
+| `Cannot read properties of undefined` on the last iteration | Classic `for` with `i <= length` instead of `i < length`                   |
+| Loop only runs once                                         | `return` inside the loop fired on the first item                           |
+| Browser tab freezes                                         | Infinite `while` loop — nothing inside it moves the condition toward false |
+| Destructured variable is `undefined`                        | The name doesn't match a property on the object — check spelling           |
+| `ReferenceError` on the accumulator after the loop          | Declared inside the loop body, used outside it                             |
 
 ---
 
@@ -301,7 +301,7 @@ One row per iteration, like the table in section 2:
 const tasks = [
   { title: "A", isDone: true },
   { title: "B", isDone: false },
-  { title: "C", isDone: false }
+  { title: "C", isDone: false },
 ];
 
 let count = 0;
@@ -316,6 +316,8 @@ for (const task of tasks) {
 ```
 
 Columns: iteration, `task.title`, `count` after, `last` after. What are `count` and `last` at the end?
+count = 3
+last = C
 
 ### 2. Submit your prediction
 
@@ -337,7 +339,7 @@ function countUrgent(tasks) {
 const tasks = [
   { title: "A", priority: 2 },
   { title: "B", priority: 1 },
-  { title: "C", priority: 1 }
+  { title: "C", priority: 1 },
 ];
 
 console.log(countUrgent(tasks));
@@ -345,8 +347,8 @@ console.log(countUrgent(tasks));
 
 In the form, answer all three:
 
-> 1. It logs ___
-> 2. The loop body runs ___ time(s)
-> 3. The author wanted ___, and the fix is ___
+> 1. It logs \_\_\_ 0
+> 2. The loop body runs \_\_\_1 time(s)
+> 3. The author wanted **_2, and the fix is _** move the return to outside the for loop, declare count outside for loop
 
 There's more than one bug. Finding one isn't enough to get the output right.
